@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <script src="https://raw.github.com/franzenzenhofer/box2d-jquery/master/js/lib/jquery.box2d.min.js"></script>
     <script>
       $(document).ready(function() {
 
@@ -22,6 +23,14 @@
           }
         });
 
+        $('#easter-egg').on("mouseenter", function() {
+          $('#cartman').fadeIn(2000);
+        });
+
+        $('#cartman').on("click", function() {
+          $('.square').box2d({'y-velocity':10});
+          $('#cartman').box2d({'y-velocity':10});
+        });
       });
     </script>
   </head>
